@@ -5,6 +5,7 @@ import * as CourseActions from '../../actions/courseActions';
 import * as AuthorActions from '../../actions/authorActions';
 import CourseForm from './CourseForm';
 import toastr from 'toastr';
+import { authorsFormattedForDropdown } from '../../selectors/selectors';
 
 export class ManageCoursePage extends React.Component { // export here is for testing purposes only
   constructor(props, context) {
@@ -108,16 +109,9 @@ function mapStateToProps(state, ownProps) {
     course = getCourseById(state.courses, courseId);
   }
 
-  const authorsFormattedForDropdown = state.authors.map((author) => {
-    return {
-      value: author.id,
-      text: author.firstName + ' ' + author.lastName
-    };
-  });
-
   return {
     course: course,
-    authors: authorsFormattedForDropdown
+    authors: authorsFormattedForDropdown(state.authors)
   };
 }
 
