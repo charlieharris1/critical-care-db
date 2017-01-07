@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
 
-const patientRow = ({ name, hospital }) => (
-  <tr>
+const patientRow = ({ name, hospital, id }) => (
+  <tr key={id} >
     <td>{name}</td>
     <td>{hospital}</td>
+    <td>{id}</td>
   </tr>
 );
 
@@ -17,6 +18,7 @@ const PatientList = ({ patients }) =>
           <tr>
             <th>Patient name</th>
             <th>Hospital</th>
+            <th>ID</th>
           </tr>
         </thead>
         <tbody>
