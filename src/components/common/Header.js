@@ -3,11 +3,13 @@ import { IndexLink } from 'react-router';
 
 const Header = () =>
   (
-    <nav>
-      <IndexLink to="/" class="active">Dashboard</IndexLink>
+    <nav className="navbar navbar-default navbar-fixed-top" >
+      <div className="container-fluid" >
+        <IndexLink to="/" class="active">Dashboard</IndexLink>
+      </div>
     </nav>
   );
 
-Header.prototype = {};
+Header.PropTypes = {};
 
 export default Header;
