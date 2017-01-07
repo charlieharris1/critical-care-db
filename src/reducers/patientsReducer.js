@@ -6,4 +6,4 @@ export default function PatientsReducer(state = initialState.patients, action) {
     return [].concat(state, action.patients);
   }
   return state;
-};
+}

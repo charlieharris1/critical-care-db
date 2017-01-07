@@ -6,4 +6,4 @@ function getPatients() {
 
 export default {
   getPatients
-}
+};
