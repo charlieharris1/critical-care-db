@@ -1,28 +1,20 @@
 import React, { PropTypes } from 'react';
+import PatientRow from './PatientRow';
 
-const patientRow = ({ name, hospital, id }) => (
-  <tr key={id} >
-    <td>{name}</td>
-    <td>{hospital}</td>
-    <td>{id}</td>
-  </tr>
-);
-
-const patientRows = (arrayOfPatients) => arrayOfPatients.map(patientRow);
-
-const PatientList = ({ patients }) =>
+const PatientList = ({patients}) =>
   (
     <div className="table-responsive">
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Patient name</th>
+            <th>Last name</th>
+            <th>First name</th>
             <th>Hospital</th>
             <th>ID</th>
           </tr>
         </thead>
         <tbody>
-        { patients.length > 0 ? patientRows(patients) : false }
+        {patients.length > 0 ? patients.map(PatientRow) : false}
         </tbody>
       </table>
     </div>

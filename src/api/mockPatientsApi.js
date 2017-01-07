@@ -1,4 +1,4 @@
-const mockPatient = { name: 'Foo Bar', hospital: 'Heatherwood', id: 'X12DFE' };
+const mockPatient = { firstName: 'Foo', lastName: 'Bar', hospital: 'Heatherwood', id: 'X12DFE' };
 
 function getPatients() {
  return Promise.resolve([mockPatient]);
