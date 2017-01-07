@@ -4,6 +4,11 @@ function getPatients() {
  return Promise.resolve([mockPatient]);
 }
 
+function savePatient() {
+ return Promise.resolve();
+}
+
 export default {
-  getPatients
+  getPatients,
+  savePatient
 };
