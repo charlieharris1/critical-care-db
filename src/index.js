@@ -9,8 +9,10 @@ import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 import configureStore from './store/configureStore';
+import { loadPatients } from './actions/patientActions';
 
 const store = configureStore();
+store.dispatch(loadPatients());
 
 render(
   <Provider store={store}>

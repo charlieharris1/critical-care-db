@@ -1,1 +1,3 @@
-export default { patients: [] };
+export default {
+  patients: []
+};
