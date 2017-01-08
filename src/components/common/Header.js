@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { IndexLink } from 'react-router';
+import React, {PropTypes} from 'react';
+import {IndexLink} from 'react-router';
 
 const Header = () =>
   (
