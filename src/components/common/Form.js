@@ -5,12 +5,6 @@ const Form = ({ patient, onChange, onSave }) =>
   (
     <form>
       <TextInput
-        name="id"
-        label="ID"
-        value={patient.id}
-        onChange={onChange}
-      />
-      <TextInput
         name="firstName"
         label="First name"
         value={patient.firstName}

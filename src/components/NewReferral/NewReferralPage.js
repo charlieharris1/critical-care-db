@@ -18,6 +18,12 @@ class NewReferralPage extends Component {
     this.redirect = this.redirect.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.patient.id !== nextProps.patient.id) {
+      this.setState({ patient: Object.assign({}, nextProps.patient) });
+    }
+  }
+
   updatePatientState(e) {
     const field = e.target.name;
     let patient = this.state.patient;
@@ -61,9 +67,15 @@ NewReferralPage.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-function mapStateToProps() {
-  let patient = { id: '', firstName: '', lastName: '', hospital: ''};
-  return { patient };
+function getPatient(patientId, patients) {
+ return patients.find(patient => patient.id === patientId);
+}
+
+function mapStateToProps(state, ownProps) {
+  const patientId = ownProps.params.id;
+  let newPatient = { id: '', firstName: '', lastName: '', hospital: ''};
+
+  return patientId ? { patient: getPatient(patientId, state.patients) } : { patient: newPatient };
 }
 
 function mapDispatchToProps(dispatch) {

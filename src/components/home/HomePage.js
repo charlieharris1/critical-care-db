@@ -28,7 +28,7 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
-  patients: React.PropTypes.array.isRequired
+  patients: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {

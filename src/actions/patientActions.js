@@ -7,6 +7,9 @@ export function loadPatientsSuccess(patients) {
 export function createPatientSuccess(patient) {
   return { type: Types.CREATE_PATIENT_SUCCESS, patient };
 }
+export function updatePatientSuccess(patient) {
+  return { type: Types.UPDATE_PATIENT_SUCCESS, patient };
+}
 
 export function loadPatients() {
   return (dispatch) =>
@@ -18,7 +21,10 @@ export function loadPatients() {
 export function savePatient(patient) {
   return (dispatch) =>
     PatientsApi.savePatient(patient)
-      .then(() => dispatch(createPatientSuccess(patient)))
+      .then(savedPatient =>
+        patient.id
+          ? dispatch(updatePatientSuccess(savedPatient))
+          : dispatch(createPatientSuccess(savedPatient)))
       .catch(err => console.error('There was a problem saving a patient'));
 }
 

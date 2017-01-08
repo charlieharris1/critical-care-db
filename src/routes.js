@@ -8,5 +8,6 @@
    <Route path="/" component={App}>
      <IndexRoute component={HomePage}/>
      <Route path="newReferral" component={NewReferralPage} />
+     <Route path="newReferral/:id" component={NewReferralPage} />
    </Route>
  );
